@@ -1,0 +1,27 @@
+{
+  "name": "hardhat-project",
+  "dependencies": {
+    "@metamask/providers": "^18.1.1",
+    "@openzeppelin/contracts": "^5.1.0",
+    "@uniswap/v3-periphery": "^1.4.4",
+    "abitype": "^1.0.6",
+    "dotenv": "^16.4.5",
+    "eth-utils": "^0.1.0-alpha.9",
+    "ethers": "^6.13.4",
+    "ethers-utils": "^2.1.11",
+    "hardhat": "^2.22.17",
+    "resolve": "^1.22.8",
+    "viem": "^1.7.0",
+    "web3": "^4.15.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@types/node": "^22.10.2",
+    "dotenv": "^16.4.5",
+    "hardhat-tracer": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.7.2"
+  }
+}
