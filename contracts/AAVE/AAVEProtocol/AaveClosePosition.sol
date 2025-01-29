@@ -15,7 +15,6 @@ contract AaveClosePosition is ActionBase, AaveHelper {
     // Захардкоженные адреса
     address constant internal WETH = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1;
     address constant internal DAI = 0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1;
-    address constant internal DSProxy = 0xDd06e3d838CF0ADd69838476993F42B7fE28d605;
     address constant internal UNISWAP_ROUTER = 0xE592427A0AEce92De3Edee1F18E0157C05861564;
     address constant internal ETH_USD_PRICE_FEED = 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612;
     uint24 constant internal POOL_FEE = 500; // 0.05% fee tier
@@ -40,6 +39,11 @@ contract AaveClosePosition is ActionBase, AaveHelper {
     }
 
     function _execute() internal {
+        // DSProxy адрес - это address(this), так как выполняется delegatecall
+        address dsProxy = address(this);
+        // Адрес пользователя - это msg.sender
+        address user = msg.sender;
+
         for (uint8 i = 0; i < CYCLES; i++) {
             // 1. Получаем данные о позиции
             (
@@ -49,17 +53,17 @@ contract AaveClosePosition is ActionBase, AaveHelper {
                 uint256 currentLiquidationThreshold,
                 ,
                 uint256 healthFactor
-            ) = getLendingPool(DEFAULT_AAVE_MARKET).getUserAccountData(msg.sender);
+            ) = getLendingPool(DEFAULT_AAVE_MARKET).getUserAccountData(dsProxy);
 
             // Если долг погашен, выводим весь оставшийся коллатерал
             if (totalDebtBase == 0) {
                 if (totalCollateralBase > 0) {
                     _withdraw(
                         DEFAULT_AAVE_MARKET,
-                        type(uint256).max, // Выводим максимальное количество
-                        msg.sender,
+                        type(uint256).max,
+                        user,
                         4, // WETH assetId
-                        DSProxy
+                        dsProxy
                     );
                 }
                 return;
@@ -80,15 +84,15 @@ contract AaveClosePosition is ActionBase, AaveHelper {
             _withdraw(
                 DEFAULT_AAVE_MARKET,
                 withdrawAmount,
-                msg.sender,
+                user,
                 4, // WETH assetId
-                DSProxy
+                dsProxy
             );
 
             // 4. Свапаем WETH в DAI
             uint256 daiAmount = _swapExactInputSingle(
                 swapAmount,
-                msg.sender,
+                user,
                 WETH,
                 DAI
             );
@@ -97,24 +101,24 @@ contract AaveClosePosition is ActionBase, AaveHelper {
             _payback(
                 DEFAULT_AAVE_MARKET,
                 daiAmount,
-                msg.sender,
+                user,
                 0, // DAI assetId
                 RATE_MODE,
-                DSProxy
+                dsProxy
             );
         }
 
         // Проверяем, остался ли коллатерал после всех циклов
         (uint256 finalCollateral, uint256 finalDebt, , , , ) = 
-            getLendingPool(DEFAULT_AAVE_MARKET).getUserAccountData(msg.sender);
+            getLendingPool(DEFAULT_AAVE_MARKET).getUserAccountData(user);
 
         if (finalDebt == 0 && finalCollateral > 0) {
             _withdraw(
                 DEFAULT_AAVE_MARKET,
                 type(uint256).max, // Выводим максимальное количество
-                msg.sender,
+                user,
                 4, // WETH assetId
-                DSProxy
+                dsProxy
             );
         }
     }
