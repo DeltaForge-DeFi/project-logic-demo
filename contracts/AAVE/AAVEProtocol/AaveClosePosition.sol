@@ -6,7 +6,7 @@ import { ActionBase } from "../../permissions/action/ActionBase.sol";
 import { AaveHelper } from "./helpers/AaveHelper.sol";
 import { IPool } from "../AAVEInterfaces/IPool.sol";
 import { ISwapRouter } from "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
-import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import { IERC20Metadata } from "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 import { AggregatorV3Interface } from "../../interfaces/AggregatorV3Interface.sol";
 
 contract AaveClosePosition is ActionBase, AaveHelper {
@@ -18,14 +18,18 @@ contract AaveClosePosition is ActionBase, AaveHelper {
     address constant internal UNISWAP_ROUTER = 0xE592427A0AEce92De3Edee1F18E0157C05861564;
     address constant internal ETH_USD_PRICE_FEED = 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612;
     uint24 constant internal POOL_FEE = 500; // 0.05% fee tier
-
+    uint8 constant internal HF_DECIMALS = 18;
+    uint8 constant internal LT_DECIMALS = 4;
+    
     // Захардкоженные параметры
-    uint8 constant internal CYCLES = 3;
+    uint8 constant internal CYCLES = 7;
     uint256 constant internal RATE_MODE = 2; // Variable rate
     uint256 constant internal MIN_HEALTH_FACTOR = 1.05e18;
 
     function executeActionDirect(bytes memory _callData) public payable override {
         _execute();
+        IERC20Metadata(WETH).transfer(msg.sender, IERC20Metadata(WETH).balanceOf(address(this)));
+        IERC20Metadata(DAI).transfer(msg.sender, IERC20Metadata(DAI).balanceOf(address(this)));
     }
 
     function executeAction(
@@ -41,19 +45,23 @@ contract AaveClosePosition is ActionBase, AaveHelper {
     function _execute() internal {
         // DSProxy адрес - это address(this), так как выполняется delegatecall
         address dsProxy = address(this);
-        // Адрес пользователя - это msg.sender
-        address user = msg.sender;
 
-        for (uint8 i = 0; i < CYCLES; i++) {
+        for (uint8 i; i < CYCLES; i++) {
             // 1. Получаем данные о позиции
             (
-                uint256 totalCollateralBase,
-                uint256 totalDebtBase,
+                uint256 totalCollateralBase, //в usd decimals - 8
+                uint256 totalDebtBase, //в usd decimals - 8
                 ,
-                uint256 currentLiquidationThreshold,
+                uint256 currentLiquidationThreshold, // decimals - 4
                 ,
-                uint256 healthFactor
+                uint256 healthFactor // decimals - 18
             ) = getLendingPool(DEFAULT_AAVE_MARKET).getUserAccountData(dsProxy);
+
+            if (totalCollateralBase == 0) {
+                return;
+            }
+
+            require(healthFactor >= MIN_HEALTH_FACTOR, "Health factor too low");
 
             // Если долг погашен, выводим весь оставшийся коллатерал
             if (totalDebtBase == 0) {
@@ -61,7 +69,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
                     _withdraw(
                         DEFAULT_AAVE_MARKET,
                         type(uint256).max,
-                        user,
+                        dsProxy,
                         4, // WETH assetId
                         dsProxy
                     );
@@ -69,14 +77,12 @@ contract AaveClosePosition is ActionBase, AaveHelper {
                 return;
             }
 
-            require(healthFactor >= MIN_HEALTH_FACTOR, "Health factor too low");
-
             // 2. Рассчитываем безопасный объем вывода
             (uint256 withdrawAmount, uint256 swapAmount) = calculateSafeWithdrawAmount(
                 totalCollateralBase,
                 totalDebtBase,
                 currentLiquidationThreshold
-            );
+                );
 
             require(withdrawAmount > 0, "Cannot safely withdraw collateral");
 
@@ -84,7 +90,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
             _withdraw(
                 DEFAULT_AAVE_MARKET,
                 withdrawAmount,
-                user,
+                dsProxy,
                 4, // WETH assetId
                 dsProxy
             );
@@ -92,7 +98,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
             // 4. Свапаем WETH в DAI
             uint256 daiAmount = _swapExactInputSingle(
                 swapAmount,
-                user,
+                dsProxy,
                 WETH,
                 DAI
             );
@@ -101,48 +107,39 @@ contract AaveClosePosition is ActionBase, AaveHelper {
             _payback(
                 DEFAULT_AAVE_MARKET,
                 daiAmount,
-                user,
+                dsProxy,
                 0, // DAI assetId
                 RATE_MODE,
                 dsProxy
             );
         }
+    }
 
-        // Проверяем, остался ли коллатерал после всех циклов
-        (uint256 finalCollateral, uint256 finalDebt, , , , ) = 
-            getLendingPool(DEFAULT_AAVE_MARKET).getUserAccountData(user);
+    function calculateBaseToToken(uint256 _amount, address _token) internal view returns (uint256) {
+        (, int256 ethPrice, , ,) = AggregatorV3Interface(ETH_USD_PRICE_FEED).latestRoundData();
+        require(ethPrice > 0, "Invalid ETH price");
 
-        if (finalDebt == 0 && finalCollateral > 0) {
-            _withdraw(
-                DEFAULT_AAVE_MARKET,
-                type(uint256).max, // Выводим максимальное количество
-                user,
-                4, // WETH assetId
-                dsProxy
-            );
-        }
+        uint256 tokenDecimals = uint256(IERC20Metadata(_token).decimals());
+        uint256 ethPriceUint = uint256(ethPrice);
+        
+        uint256 amountInTokenDecimals = _amount * (10**tokenDecimals);
+        
+        return amountInTokenDecimals / ethPriceUint ;
     }
 
     function calculateSafeWithdrawAmount(
         uint256 totalCollateral,
         uint256 totalDebt,
         uint256 liquidationThreshold
-    ) internal view returns (uint256 withdrawAmount, uint256 swapAmount) {
-        // Получаем цену ETH
+    ) public view returns (uint256 withdrawAmount, uint256 swapAmount) {
+
         (, int256 ethPrice, , ,) = AggregatorV3Interface(ETH_USD_PRICE_FEED).latestRoundData();
         require(ethPrice > 0, "Invalid ETH price");
 
-        // Рассчитываем максимально возможный вывод в USD
-        uint256 requiredCollateralUsd = (totalDebt * MIN_HEALTH_FACTOR * 100) / liquidationThreshold;
-        uint256 maxWithdrawUsd = totalCollateral > requiredCollateralUsd ? 
-            totalCollateral - requiredCollateralUsd : 0;
-
-        // Определяем сколько нужно свапнуть в USD
-        uint256 swapAmountUsd = maxWithdrawUsd < totalDebt ? maxWithdrawUsd : totalDebt;
-
-        // Конвертируем суммы в ETH
-        withdrawAmount = (maxWithdrawUsd * 1e18) / uint256(ethPrice);
-        swapAmount = (swapAmountUsd * 1e18) / uint256(ethPrice);
+        uint256 maxToWithdrawUsd = totalCollateral - (MIN_HEALTH_FACTOR * totalDebt * 10 ** LT_DECIMALS) / liquidationThreshold / 10 ** HF_DECIMALS;
+        uint256 maxToWithdraw = calculateBaseToToken(maxToWithdrawUsd, WETH);
+        withdrawAmount = maxToWithdraw;
+        swapAmount = (maxToWithdraw * 90) / 100;
     }
 
     function _swapExactInputSingle(
@@ -151,7 +148,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
         address tokenIn,
         address tokenOut
     ) internal returns (uint256 amountOut) {
-        IERC20(tokenIn).approve(UNISWAP_ROUTER, amountIn);
+        IERC20Metadata(tokenIn).approve(UNISWAP_ROUTER, amountIn);
 
         ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
             .ExactInputSingleParams({
