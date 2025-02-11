@@ -15,12 +15,13 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
     // Захардкоженные адреса токенов и контрактов
     address constant internal WETH = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1;
     address constant internal DAI = 0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1;
+    address constant internal USDC = 0xaf88d065e77c8cC2239327C5EDb3A432268e5831;
     address constant internal UNISWAP_ROUTER = 0xE592427A0AEce92De3Edee1F18E0157C05861564;
     address constant internal ETH_USD_PRICE_FEED = 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612;
     uint24 constant internal POOL_FEE = 500; // 0.05% fee tier
 
     struct OpenPositionParams {
-        uint256 initialSupplyAmount;  // Сумма начального депозита в WETH
+        uint256 initialSupplyAmount;  // Сумма начального депозита в USDC
         uint256 borrowPercent;        // Процент от депозита для займа (например, 50 = 50%)
         uint8 cycles;                 // Количество циклов
     }
@@ -54,6 +55,7 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
         OpenPositionParams memory params = abi.decode(_callData, (OpenPositionParams));
         _execute(params);
     }
+    
 
     function executeAction(
         bytes memory _callData,
@@ -76,17 +78,21 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
         // Адрес пользователя - это msg.sender
         address user = msg.sender;
 
+       IERC20(USDC).transferFrom(user, address(this), params.initialSupplyAmount);
+
+       uint256 amountOutForFirstSupply = _swapExactInputSingle(params.initialSupplyAmount, USDC, WETH);
+
         // Начальный депозит WETH
         _supply(
             DEFAULT_AAVE_MARKET,
-            params.initialSupplyAmount,
-            user,           // от кого токены
+            amountOutForFirstSupply,
+            dsProxy,           // от кого токены
             4,             // WETH assetId
             dsProxy        // на чье имя депозит
         );
 
         // Рассчитываем сумму займа в USD на основе стоимости WETH
-        uint256 usdValue = calculateBorrowAmount(params.initialSupplyAmount);
+        uint256 usdValue = params.initialSupplyAmount;
         uint256 borrowAmount = (usdValue * params.borrowPercent) / 100;
 
         // Выполняем циклы borrow-swap-supply
@@ -97,34 +103,36 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
                 0, // DAI assetId
                 borrowAmount,
                 2, // Variable rate
-                user,
+                dsProxy,
                 dsProxy
             );
 
             // 2. Swap DAI to WETH
-            uint256 amountOut = _swapExactInputSingle(borrowAmount, user);
+            uint256 amountOut = _swapExactInputSingle(borrowAmount, DAI, WETH);
 
             // 3. Supply полученный WETH
             _supply(
                 DEFAULT_AAVE_MARKET,
                 amountOut,
-                user,
+                dsProxy,
                 4, // WETH assetId
                 dsProxy
             );
+
+            borrowAmount *= params.borrowPercent / 100;
         }
     }
 
-    function _swapExactInputSingle(uint256 amountIn, address recipient) internal returns (uint256 amountOut) {
+    function _swapExactInputSingle(uint256 amountIn, address assetIn, address assetOut) internal returns (uint256 amountOut) {
         // Апрув DAI для роутера
-        IERC20(DAI).approve(UNISWAP_ROUTER, amountIn);
+        IERC20(assetIn).approve(UNISWAP_ROUTER, amountIn);
 
         ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
             .ExactInputSingleParams({
-                tokenIn: DAI,
-                tokenOut: WETH,
+                tokenIn: assetIn,
+                tokenOut: assetOut,
                 fee: POOL_FEE,
-                recipient: recipient,
+                recipient: address(this),
                 deadline: block.timestamp + 300,
                 amountIn: amountIn,
                 amountOutMinimum: 0,
