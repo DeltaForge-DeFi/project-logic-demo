@@ -80,7 +80,7 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
 
        IERC20(USDC).transferFrom(user, address(this), params.initialSupplyAmount);
 
-       uint256 amountOutForFirstSupply = _swapExactInputSingle(params.initialSupplyAmount, USDC, WETH);
+       uint256 amountOutForFirstSupply = _swapExactInputSingle(IERC20(USDC).balanceOf(address(this)), USDC, WETH);
 
         // Начальный депозит WETH
         _supply(
@@ -92,8 +92,7 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
         );
 
         // Рассчитываем сумму займа в USD на основе стоимости WETH
-        uint256 usdValue = params.initialSupplyAmount;
-        uint256 borrowAmount = (usdValue * params.borrowPercent) / 100;
+        uint256 borrowAmount = (params.initialSupplyAmount * params.borrowPercent) / 100;
 
         // Выполняем циклы borrow-swap-supply
         for (uint8 i = 0; i < params.cycles; i++) {
@@ -119,7 +118,7 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
                 dsProxy
             );
 
-            borrowAmount *= params.borrowPercent / 100;
+            borrowAmount = (borrowAmount * params.borrowPercent) / 100;
         }
     }
 
