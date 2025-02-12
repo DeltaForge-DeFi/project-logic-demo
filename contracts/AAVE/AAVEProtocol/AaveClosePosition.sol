@@ -178,10 +178,6 @@ contract AaveClosePosition is ActionBase, AaveHelper {
         IPool lendingPool = getLendingPool(_market);
         address tokenAddr = lendingPool.getReserveAddressById(_assetId);
 
-        if (_amount == type(uint256).max) {
-            _amount = tokenAddr.getBalance(_onBehalf);
-        }
-
         lendingPool.withdraw(tokenAddr, _amount, _to);
 
         bytes memory logData = abi.encode(_market, tokenAddr, _amount, _to);

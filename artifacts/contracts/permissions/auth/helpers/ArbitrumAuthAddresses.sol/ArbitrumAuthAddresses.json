@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ArbitrumAuthAddresses",
+  "sourceName": "contracts/permissions/auth/helpers/ArbitrumAuthAddresses.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212200d3c578c276a89f189888da23569c41ae77e979fe7aad93da9905f461b843e2264736f6c63430008180033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212200d3c578c276a89f189888da23569c41ae77e979fe7aad93da9905f461b843e2264736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

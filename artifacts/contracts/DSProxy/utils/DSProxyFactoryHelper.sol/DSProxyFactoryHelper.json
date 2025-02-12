@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DSProxyFactoryHelper",
+  "sourceName": "contracts/DSProxy/utils/DSProxyFactoryHelper.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b01d0afc0fcf2abf0286eb431c3b229e2d0e436f8fad95f8dd4ae46c48ab437b64736f6c63430008180033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b01d0afc0fcf2abf0286eb431c3b229e2d0e436f8fad95f8dd4ae46c48ab437b64736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

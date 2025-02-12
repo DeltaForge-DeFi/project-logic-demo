@@ -92,7 +92,7 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
         );
 
         // Рассчитываем сумму займа в USD на основе стоимости WETH
-        uint256 borrowAmount = (params.initialSupplyAmount * params.borrowPercent) / 100;
+        uint256 borrowAmount = (params.initialSupplyAmount * 10 ** 12 * params.borrowPercent) / 100;
 
         // Выполняем циклы borrow-swap-supply
         for (uint8 i = 0; i < params.cycles; i++) {
@@ -188,7 +188,7 @@ contract AaveOpenPosition is ActionBase, AaveHelper {
             _onBehalf = address(this);
         }
 
-        lendingPool.borrow(tokenAddr, _amount, _rateMode, AAVE_REFERRAL_CODE, _onBehalf);
+        lendingPool.borrow(tokenAddr, _amount, _rateMode, 0, _onBehalf);
 
         bytes memory logData = abi.encode(_market, tokenAddr, _amount, _rateMode, _to, _onBehalf);
         return (_amount, logData);

@@ -1,0 +1,2304 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEInterfaces/IAaveProtocolDataProvider.sol": {
+      "lastModificationDate": 1738194121418,
+      "contentHash": "0c70ddd38f1a1c95296312ad9c16abf6",
+      "sourceName": "contracts/AAVE/AAVEInterfaces/IAaveProtocolDataProvider.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IAaveProtocolDataProvider"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/helpers/AaveHelper.sol": {
+      "lastModificationDate": 1738194121416,
+      "contentHash": "dfca8fd5a0dac1cdf1a520e2249c796d",
+      "sourceName": "contracts/AAVE/AAVEProtocol/helpers/AaveHelper.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../AAVEInterfaces/IL2Pool.sol",
+        "../../AAVEInterfaces/IAaveProtocolDataProvider.sol",
+        "../../AAVEInterfaces/IPoolAddressesProvider.sol",
+        "./ArbitrumAaveAddresses.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveHelper"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEInterfaces/IL2Pool.sol": {
+      "lastModificationDate": 1738194121418,
+      "contentHash": "0cd8daaa89c9294e8b3cc6bc556c3722",
+      "sourceName": "contracts/AAVE/AAVEInterfaces/IL2Pool.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IL2Pool"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEInterfaces/IPoolAddressesProvider.sol": {
+      "lastModificationDate": 1738194121417,
+      "contentHash": "3a272516b305a4646aa65e2f55adcb63",
+      "sourceName": "contracts/AAVE/AAVEInterfaces/IPoolAddressesProvider.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IPoolAddressesProvider"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/helpers/ArbitrumAaveAddresses.sol": {
+      "lastModificationDate": 1738194121416,
+      "contentHash": "21e68fd7e0a10f18a3652fc46ecdf3e6",
+      "sourceName": "contracts/AAVE/AAVEProtocol/helpers/ArbitrumAaveAddresses.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ArbitrumAaveAddresses"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEInterfaces/IPool.sol": {
+      "lastModificationDate": 1738194121418,
+      "contentHash": "ef919bac178318863b3884f97f0a784e",
+      "sourceName": "contracts/AAVE/AAVEInterfaces/IPool.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPoolAddressesProvider.sol",
+        "../type/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IPool"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/type/DataTypes.sol": {
+      "lastModificationDate": 1738194121414,
+      "contentHash": "8e865ca311e86336a21988fbba840007",
+      "sourceName": "contracts/AAVE/type/DataTypes.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DataTypes"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/WithdrawMiniV2.sol": {
+      "lastModificationDate": 1738194121415,
+      "contentHash": "22d0bad2df8ead7dfee49d9c455f110b",
+      "sourceName": "contracts/AAVE/AAVEProtocol/WithdrawMiniV2.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../AAVEInterfaces/IL2Pool.sol",
+        "../AAVEInterfaces/IAaveProtocolDataProvider.sol",
+        "../AAVEInterfaces/IPoolAddressesProvider.sol",
+        "./helpers/AaveHelper.sol",
+        "../../common/interfaces/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "WithdrawMiniV2"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/interfaces/IERC20.sol": {
+      "lastModificationDate": 1738690620324,
+      "contentHash": "cb16fa954fd2392528f9f5acfd8742f3",
+      "sourceName": "contracts/common/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/auth/AdminAuth.sol": {
+      "lastModificationDate": 1738194121409,
+      "contentHash": "4d2e89f9ccd8aab3a663537bb60c3529",
+      "sourceName": "contracts/permissions/auth/AdminAuth.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/SafeERC20.sol",
+        "../../common/interfaces/IERC20.sol",
+        "./AdminData.sol",
+        "./helpers/AuthHelper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AdminAuth"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/utils/SafeERC20.sol": {
+      "lastModificationDate": 1738194121412,
+      "contentHash": "6b124d8370e09b6741df79ec2313547b",
+      "sourceName": "contracts/common/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IERC20.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/auth/AdminData.sol": {
+      "lastModificationDate": 1738194121409,
+      "contentHash": "bc672fcfd5bcd72e32762cad756fa254",
+      "sourceName": "contracts/permissions/auth/AdminData.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./helpers/AuthHelper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AdminData"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/auth/helpers/AuthHelper.sol": {
+      "lastModificationDate": 1738194121409,
+      "contentHash": "4fc1ad3f4bab1ec78a17a2edcf7b75f0",
+      "sourceName": "contracts/permissions/auth/helpers/AuthHelper.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ArbitrumAuthAddresses.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AuthHelper"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/utils/Address.sol": {
+      "lastModificationDate": 1738194121412,
+      "contentHash": "c97733bdc542d9054a8f7bf3f372c2cd",
+      "sourceName": "contracts/common/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/auth/helpers/ArbitrumAuthAddresses.sol": {
+      "lastModificationDate": 1738194121410,
+      "contentHash": "3f5eb5fc30403c45b391051bb35d83bf",
+      "sourceName": "contracts/permissions/auth/helpers/ArbitrumAuthAddresses.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ArbitrumAuthAddresses"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/registry/DFSRegistry.sol": {
+      "lastModificationDate": 1738194121411,
+      "contentHash": "3403f89aa04fb01724a5472280c14561",
+      "sourceName": "contracts/permissions/registry/DFSRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../auth/AdminAuth.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DFSRegistry"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/action/ActionBase.sol": {
+      "lastModificationDate": 1738194121410,
+      "contentHash": "fec7ea48334f9eaf4d24f23e77486e54",
+      "sourceName": "contracts/permissions/action/ActionBase.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../permissions/auth/AdminAuth.sol",
+        "../../permissions/registry/DFSRegistry.sol",
+        "../../DSProxy/proxy/DSProxy.sol",
+        "../../common/utils/DefisaverLogger.sol",
+        "./helpers/ActionsUtilHelper.sol",
+        "../../common/interfaces/ISafe.sol",
+        "../../common/utils/CheckWalletType.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ActionBase"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/proxy/DSProxy.sol": {
+      "lastModificationDate": 1738194121406,
+      "contentHash": "e43da738f64fe1830baee9fe95828ec8",
+      "sourceName": "contracts/DSProxy/proxy/DSProxy.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../authority/DSAuth.sol",
+        "../note/DSNote.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSProxy",
+        "DSProxyCache"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/utils/DefisaverLogger.sol": {
+      "lastModificationDate": 1738194121412,
+      "contentHash": "f84705bad1fb6382094e4ad3d4c88cb1",
+      "sourceName": "contracts/common/utils/DefisaverLogger.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DefisaverLogger"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/interfaces/ISafe.sol": {
+      "lastModificationDate": 1738194121413,
+      "contentHash": "975931035d579d8c57e8b9428cb6258e",
+      "sourceName": "contracts/common/interfaces/ISafe.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ISafe"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/utils/CheckWalletType.sol": {
+      "lastModificationDate": 1738194121411,
+      "contentHash": "b55a13a4f531f5db2375dcda8078c40b",
+      "sourceName": "contracts/common/utils/CheckWalletType.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../DSProxy/interfaces/IDSProxyFactory.sol",
+        "../../DSProxy/utils/DSProxyFactoryHelper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "CheckWalletType"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/action/helpers/ActionsUtilHelper.sol": {
+      "lastModificationDate": 1738194121410,
+      "contentHash": "a6ee4bd503e72aac30ffda6dfea450a2",
+      "sourceName": "contracts/permissions/action/helpers/ActionsUtilHelper.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ArbitrumActionsUtilAddresses.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ActionsUtilHelper"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/authority/DSAuth.sol": {
+      "lastModificationDate": 1738194121407,
+      "contentHash": "7ba2fc505596de6c993eff805c035c9b",
+      "sourceName": "contracts/DSProxy/authority/DSAuth.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./DSAuthority.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSAuth",
+        "DSAuthEvents"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/note/DSNote.sol": {
+      "lastModificationDate": 1738194121405,
+      "contentHash": "a71ca3c2685586c3cf8d9d13a3eaca84",
+      "sourceName": "contracts/DSProxy/note/DSNote.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSNote"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/authority/DSAuthority.sol": {
+      "lastModificationDate": 1738194121408,
+      "contentHash": "baeaca88eb9d93091eaef6a6c981c6f5",
+      "sourceName": "contracts/DSProxy/authority/DSAuthority.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSAuthority"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/interfaces/IDSProxyFactory.sol": {
+      "lastModificationDate": 1738194121408,
+      "contentHash": "18dec635ffdd52bd13f42145a9659e85",
+      "sourceName": "contracts/DSProxy/interfaces/IDSProxyFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IDSProxyFactory"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/utils/DSProxyFactoryHelper.sol": {
+      "lastModificationDate": 1738194121407,
+      "contentHash": "c448cc2ae430fc008d5dbec7100dc4b7",
+      "sourceName": "contracts/DSProxy/utils/DSProxyFactoryHelper.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ArbitrumProxyFactoryAddresses.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSProxyFactoryHelper"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/utils/ArbitrumProxyFactoryAddresses.sol": {
+      "lastModificationDate": 1738194121407,
+      "contentHash": "dabb818660fee39f7944afd0e9ce824c",
+      "sourceName": "contracts/DSProxy/utils/ArbitrumProxyFactoryAddresses.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ArbitrumProxyFactoryAddresses"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/permissions/action/helpers/ArbitrumActionsUtilAddresses.sol": {
+      "lastModificationDate": 1738194121410,
+      "contentHash": "1678594e13eb14e068951c2b818f5cb8",
+      "sourceName": "contracts/permissions/action/helpers/ArbitrumActionsUtilAddresses.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "ArbitrumActionsUtilAddresses"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/proxy/proxy.sol": {
+      "lastModificationDate": 1738194121406,
+      "contentHash": "ed59b22f9b899931d163f5e50403d29d",
+      "sourceName": "contracts/DSProxy/proxy/proxy.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../authority/DSAuth.sol",
+        "../note/DSNote.sol",
+        "../../common/interfaces/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "DSProxy",
+        "DSProxyCache",
+        "DSProxyFactory"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/GMXShort/createShort.sol": {
+      "lastModificationDate": 1738690620297,
+      "contentHash": "c6f34fb2bb76669322c3a670094c15a0",
+      "sourceName": "contracts/GMX/GMXShort/createShort.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../DSProxy/authority/DSAuthority.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CreateShort",
+        "IERC20",
+        "IExchangeRouter",
+        "IReader"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/UniswapSwap.sol": {
+      "lastModificationDate": 1738194121416,
+      "contentHash": "2068015a2392961299787983e57aa327",
+      "sourceName": "contracts/AAVE/AAVEProtocol/UniswapSwap.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+        "./helpers/AaveHelper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "UniswapSwap"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/utils/TokenUtils.sol": {
+      "lastModificationDate": 1738194121412,
+      "contentHash": "920447a27bcdbb90825e7504fc84186c",
+      "sourceName": "contracts/common/utils/TokenUtils.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IWETH.sol",
+        "../interfaces/IERC20.sol",
+        "./SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "TokenUtils"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+      "lastModificationDate": 1737972982401,
+      "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
+      "sourceName": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISwapRouter"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/node_modules/@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1737972982396,
+      "contentHash": "f0616d1842da6584f8454c9b323d777f",
+      "sourceName": "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/common/interfaces/IWETH.sol": {
+      "lastModificationDate": 1738194121413,
+      "contentHash": "4c84faf9af3251af886933af2c0d3583",
+      "sourceName": "contracts/common/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+      "lastModificationDate": 1737972982370,
+      "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
+      "sourceName": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapCallback"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1737972987268,
+      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1737972987270,
+      "contentHash": "794db3115001aa372c79326fcfd44b1f",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AaveClosePosition.sol": {
+      "lastModificationDate": 1739368355731,
+      "contentHash": "97eed09a45fa09f2599aecb31928baea",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AaveClosePosition.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "../../interfaces/AggregatorV3Interface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveClosePosition"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/interfaces/AggregatorV3Interface.sol": {
+      "lastModificationDate": 1738194121419,
+      "contentHash": "9611624561bee790b57b5f8654c8b572",
+      "sourceName": "contracts/interfaces/AggregatorV3Interface.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AggregatorV3Interface"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AaveOpenPositin.sol": {
+      "lastModificationDate": 1739341731127,
+      "contentHash": "b7a12b84da25f906aa384d19d1333586",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AaveOpenPositin.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../../interfaces/AggregatorV3Interface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveOpenPosition"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AaveWithdraw.sol": {
+      "lastModificationDate": 1738194121416,
+      "contentHash": "d1e5faf6bc670c560a0d3ed33036da74",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AaveWithdraw.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveWithdraw"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AaveSupply.sol": {
+      "lastModificationDate": 1738194121415,
+      "contentHash": "ca15badfe8a641aac6991388fc1fb54b",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AaveSupply.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveSupply"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AavePayback.sol": {
+      "lastModificationDate": 1738194121415,
+      "contentHash": "ac84b6c65187bb8264847701fffc5fd8",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AavePayback.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AavePayback"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AaveBorrow.sol": {
+      "lastModificationDate": 1738194121417,
+      "contentHash": "694d76b61352a7506e4248f9c8078937",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AaveBorrow.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveBorrow"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/AaveATokenPayback.sol": {
+      "lastModificationDate": 1738194121417,
+      "contentHash": "891988db422b08b3e4c274b44cc0ef8c",
+      "sourceName": "contracts/AAVE/AAVEProtocol/AaveATokenPayback.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/utils/TokenUtils.sol",
+        "../../permissions/action/ActionBase.sol",
+        "./helpers/AaveHelper.sol",
+        "../AAVEInterfaces/IPool.sol",
+        "../type/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.24"
+      ],
+      "artifacts": [
+        "AaveATokenPayback"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/Withdraw.sol": {
+      "lastModificationDate": 1738194121414,
+      "contentHash": "ce2daa28f0ea84cbaba9cfb426489b53",
+      "sourceName": "contracts/AAVE/AAVEProtocol/Withdraw.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../AAVEInterfaces/IL2Pool.sol",
+        "./helpers/AaveHelper.sol",
+        "../../common/interfaces/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveWithdrawMini"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/Repay.sol": {
+      "lastModificationDate": 1738194121414,
+      "contentHash": "d94c760b6c1b816573146ecb834a0dbc",
+      "sourceName": "contracts/AAVE/AAVEProtocol/Repay.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../common/interfaces/IERC20.sol",
+        "../AAVEInterfaces/IL2Pool.sol",
+        "./helpers/AaveHelper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "AaveRepayMini"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/GMXShort/Mock/MockUniswapSwap.sol": {
+      "lastModificationDate": 1738194121404,
+      "contentHash": "9fb1e580b152f2b98df2889ce867a3c0",
+      "sourceName": "contracts/GMX/GMXShort/Mock/MockUniswapSwap.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./MockERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockUniswapSwap"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/GMXShort/Mock/MockERC20.sol": {
+      "lastModificationDate": 1738194121403,
+      "contentHash": "2dafedec566503f492990804be20160b",
+      "sourceName": "contracts/GMX/GMXShort/Mock/MockERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockERC20"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/AAVE/AAVEProtocol/looping.sol": {
+      "lastModificationDate": 1738194121414,
+      "contentHash": "d278f225a15a95d31038edd55b8bc030",
+      "sourceName": "contracts/AAVE/AAVEProtocol/looping.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/authority/auth.sol": {
+      "lastModificationDate": 1738194121407,
+      "contentHash": "e398951e600b063916deed5e927c3dd0",
+      "sourceName": "contracts/DSProxy/authority/auth.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSAuth",
+        "DSAuthEvents",
+        "DSAuthority"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/DSProxy/note/note.sol": {
+      "lastModificationDate": 1738194121405,
+      "contentHash": "d13da3579292fa32b06ee4e80df01917",
+      "sourceName": "contracts/DSProxy/note/note.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "DSNote"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/Deposit.sol": {
+      "lastModificationDate": 1738194121403,
+      "contentHash": "262ad574835edb24be02baa885fdd665",
+      "sourceName": "contracts/GMX/Deposit.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Deposit",
+        "IERC20"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/GMXShort/Mock/MockExchangeRouter.sol": {
+      "lastModificationDate": 1738194121403,
+      "contentHash": "d54460edfc39315621d2dba24baa1013",
+      "sourceName": "contracts/GMX/GMXShort/Mock/MockExchangeRouter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IExchangeRouter",
+        "MockExchangeRouter"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/GMXShort/Mock/MockMarket.sol": {
+      "lastModificationDate": 1738194121404,
+      "contentHash": "34658ae3aa6c66076fd4ba27c8f42936",
+      "sourceName": "contracts/GMX/GMXShort/Mock/MockMarket.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockMarket"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/GMX/GMXShort/Mock/MockReader.sol": {
+      "lastModificationDate": 1738194121404,
+      "contentHash": "13128a077a86e40f41f02766799ba0c5",
+      "sourceName": "contracts/GMX/GMXShort/Mock/MockReader.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IReader",
+        "MockReader"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/interfaces/IDSProxy.sol": {
+      "lastModificationDate": 1738194121419,
+      "contentHash": "769c4b4d386a917bd9dd9fbfc1f5a203",
+      "sourceName": "contracts/interfaces/IDSProxy.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IDSProxy"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/stub/stub.sol": {
+      "lastModificationDate": 1738194121419,
+      "contentHash": "554ba4a779685eb89e3c70c655c5709b",
+      "sourceName": "contracts/stub/stub.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IWETH",
+        "TestStub"
+      ]
+    }
+  }
+}
