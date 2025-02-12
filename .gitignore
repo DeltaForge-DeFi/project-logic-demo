@@ -42,3 +42,7 @@ Thumbs.db
 
 # Локальные файлы конфигурации
 *.local
+
+
+artifacts/
+cache/

@@ -78,7 +78,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
             }
 
             // 2. Рассчитываем безопасный объем вывода
-            (uint256 withdrawAmount, uint256 swapAmount) = calculateSafeWithdrawAmount(
+            (uint256 withdrawAmount) = calculateSafeWithdrawAmount(
                 totalCollateralBase,
                 totalDebtBase,
                 currentLiquidationThreshold
@@ -97,7 +97,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
 
             // 4. Свапаем WETH в DAI
             uint256 daiAmount = _swapExactInputSingle(
-                swapAmount,
+                withdrawAmount,
                 dsProxy,
                 WETH,
                 DAI
@@ -131,7 +131,7 @@ contract AaveClosePosition is ActionBase, AaveHelper {
         uint256 totalCollateral,
         uint256 totalDebt,
         uint256 liquidationThreshold
-    ) public view returns (uint256 withdrawAmount, uint256 swapAmount) {
+    ) public view returns (uint256 withdrawAmount) {
 
         (, int256 ethPrice, , ,) = AggregatorV3Interface(ETH_USD_PRICE_FEED).latestRoundData();
         require(ethPrice > 0, "Invalid ETH price");
@@ -139,7 +139,6 @@ contract AaveClosePosition is ActionBase, AaveHelper {
         uint256 maxToWithdrawUsd = totalCollateral - (MIN_HEALTH_FACTOR * totalDebt * 10 ** LT_DECIMALS) / liquidationThreshold / 10 ** HF_DECIMALS;
         uint256 maxToWithdraw = calculateBaseToToken(maxToWithdrawUsd, WETH);
         withdrawAmount = maxToWithdraw;
-        swapAmount = (maxToWithdraw * 90) / 100;
     }
 
     function _swapExactInputSingle(
@@ -178,10 +177,6 @@ contract AaveClosePosition is ActionBase, AaveHelper {
     ) internal returns (uint256, bytes memory) {
         IPool lendingPool = getLendingPool(_market);
         address tokenAddr = lendingPool.getReserveAddressById(_assetId);
-
-        if (_amount == type(uint256).max) {
-            _amount = tokenAddr.getBalance(_onBehalf);
-        }
 
         lendingPool.withdraw(tokenAddr, _amount, _to);
 

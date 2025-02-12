@@ -5,8 +5,8 @@ dotenv.config();
 // Загрузка переменных из .env
 const PROVIDER_URL = process.env.ARBITRUM_ONE_RPC!;
 const PRIVATE_KEY = process.env.PRIVATE_KEY!;
-const DS_PROXY_ADDRESS = "0x96e8c7ccf8f306a24cb9f982bba7b04454cf0638"; // Адрес DSProxy
-const AAVE_WITHDRAW_ADDRESS = "0x570BfB7A185EFa93d54b06348a9eB69F6bd94ec3"; // Адрес контракта AaveWithdraw
+const DS_PROXY_ADDRESS = "0xDd06e3d838CF0ADd69838476993F42B7fE28d605"; // Адрес DSProxy
+const AAVE_WITHDRAW_ADDRESS = "0x5A86dC64ee2499f7d3a99d270082a9fb43a08326"; // Адрес контракта AaveWithdraw
 const DEFAULT_AAVE_MARKET = "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb"; // Aave Market
 
 // ABI для DSProxy
@@ -91,7 +91,7 @@ async function main() {
       AAVE_WITHDRAW_ADDRESS,
       callData,
     ]),
-    gasLimit: 500000, // Лимит газа
+    gasLimit: 1000000, // Лимит газа
   };
 
   console.log("Данные транзакции:", txRequest);

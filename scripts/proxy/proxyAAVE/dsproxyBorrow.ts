@@ -13,7 +13,7 @@ const aaveBorrowAbi = [
 ];
 
 // Адреса контрактов
-const dsProxyAddress = "0x96e8c7ccf8f306a24cb9f982bba7b04454cf0638";
+const dsProxyAddress = "0xDd06e3d838CF0ADd69838476993F42B7fE28d605";
 const aaveBorrowAddress = "0x89D9fcb5abe53fb0751a564C45cd23B3011058F7";
 
 // Параметры для заимствования

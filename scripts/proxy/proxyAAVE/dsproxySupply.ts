@@ -1,4 +1,6 @@
 import { ethers } from "ethers";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 // ABI для DSProxy
 const dsProxyAbi = [
@@ -22,12 +24,12 @@ const erc20Abi = [
 
 // Адреса контрактов
 const dsProxyAddress = "0xDd06e3d838CF0ADd69838476993F42B7fE28d605";
-const aaveSupplyAddress = "0x755d8133E1688b071Ec4ac73220eF7f70BC6992F";
+const aaveSupplyAddress = "0xfC0116CC89C50496De9566c732498444670402a7";
 const lendingPoolAddress = "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb"; // Например, для Aave V2 на Ethereum
 const tokenAddress = "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1"; // Замените на адрес вашего токена
 
 // Параметры для supply
-const amount = ethers.parseUnits("2", 18); // 2 токена с 18 десятичными знаками
+const amount = ethers.parseUnits("0.5", 6); // 2 токена с 18 десятичными знаками
 const from = "0x8594169c6E19C7912448827BE6c8BC16A6A32419";
 const assetId = 0; // Идентификатор актива в Aave
 const onBehalf = "0x8594169c6E19C7912448827BE6c8BC16A6A32419"; // Если вы хотите сделать supply от имени другого пользователя
@@ -37,12 +39,11 @@ async function main() {
   const provider = new ethers.JsonRpcProvider("https://arb1.arbitrum.io/rpc");
 
   // Настройка кошелька
-  const privateKey =
-    ""; // Замените на ваш закрытый ключ
+  const privateKey = process.env.PRIVATE_KEY!; // Замените на ваш закрытый ключ
   const wallet = new ethers.Wallet(privateKey, provider);
 
   // Создание экземпляра контракта токена
-  const tokenContract = new ethers.Contract(tokenAddress, erc20Abi, wallet);
+  const tokenContract = new ethers.Contract("0xaf88d065e77c8cC2239327C5EDb3A432268e5831", erc20Abi, wallet);
 
   // Проверка текущего разрешения (allowance) для DSProxy
   const currentAllowance = await tokenContract.allowance(from, dsProxyAddress);
@@ -68,36 +69,21 @@ async function main() {
 
   // Подготовка данных для вызова executeActionDirect
   const params = {
-    amount: amount,
-    from: from,
-    assetId: assetId,
-    enableAsColl: false,
-    useDefaultMarket: true,
-    useOnBehalf: true,
-    market: lendingPoolAddress,
-    onBehalf: onBehalf,
+    initialSupplyAmount: amount,
+    borrowPercent: "59",
+    cycles: 2,
   };
 
   const callData = ethers.AbiCoder.defaultAbiCoder().encode(
     [
       "uint256",
-      "address",
-      "uint16",
-      "bool",
-      "bool",
-      "bool",
-      "address",
-      "address",
+      "uint256",
+      "uint8",
     ],
     [
-      params.amount,
-      params.from,
-      params.assetId,
-      params.enableAsColl,
-      params.useDefaultMarket,
-      params.useOnBehalf,
-      params.market,
-      params.onBehalf,
+      params.initialSupplyAmount,
+      params.borrowPercent,
+      params.cycles,
     ]
   );
 
