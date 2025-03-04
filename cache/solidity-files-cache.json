@@ -1,0 +1,454 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/ERC1967/ERC1967Utils.sol": {
+      "lastModificationDate": 1741076837197,
+      "contentHash": "bb76ddb6ed4edc3d6f23962e9f79b5ad",
+      "sourceName": "contracts/beaconProxy/ERC1967/ERC1967Utils.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../beacon/IBeacon.sol",
+        "../interfaces/IERC1967.sol",
+        "../utils/Address.sol",
+        "../utils/StorageSlot.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.22"
+      ],
+      "artifacts": [
+        "ERC1967Utils"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/beacon/IBeacon.sol": {
+      "lastModificationDate": 1741076298181,
+      "contentHash": "0a5c323fd908535580597848b8e550fb",
+      "sourceName": "contracts/beaconProxy/beacon/IBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IBeacon"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/interfaces/IERC1967.sol": {
+      "lastModificationDate": 1741076812157,
+      "contentHash": "4e17c826a54a8ee1a185449d4695d07d",
+      "sourceName": "contracts/beaconProxy/interfaces/IERC1967.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1967"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/utils/Address.sol": {
+      "lastModificationDate": 1741076743890,
+      "contentHash": "5b9a49c25d7edbc48ffcbd2c7e8a40ef",
+      "sourceName": "contracts/beaconProxy/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Errors.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/utils/StorageSlot.sol": {
+      "lastModificationDate": 1741076733331,
+      "contentHash": "e656d64c4ce918f3d13030b91c935134",
+      "sourceName": "contracts/beaconProxy/utils/StorageSlot.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "StorageSlot"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/utils/Errors.sol": {
+      "lastModificationDate": 1741087408840,
+      "contentHash": "6b5eac2b85500c3012977849cfd633d8",
+      "sourceName": "contracts/beaconProxy/utils/Errors.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Errors"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/beacon/BeaconProxy.sol": {
+      "lastModificationDate": 1741076298180,
+      "contentHash": "bfa0e144c8efdc7104446e13bc20cb77",
+      "sourceName": "contracts/beaconProxy/beacon/BeaconProxy.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IBeacon.sol",
+        "../Proxy.sol",
+        "../ERC1967/ERC1967Utils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.22"
+      ],
+      "artifacts": [
+        "BeaconProxy"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/Proxy.sol": {
+      "lastModificationDate": 1741076356678,
+      "contentHash": "35308c2fa7be99a959494c37e8257c16",
+      "sourceName": "contracts/beaconProxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/beacon/UpgradeableBeacon.sol": {
+      "lastModificationDate": 1741080313874,
+      "contentHash": "005cfbd3c6c00141ff24e574c43f1df5",
+      "sourceName": "contracts/beaconProxy/beacon/UpgradeableBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IBeacon.sol",
+        "../access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "UpgradeableBeacon"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/access/Ownable.sol": {
+      "lastModificationDate": 1741076423011,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "contracts/beaconProxy/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/beaconProxy/utils/Context.sol": {
+      "lastModificationDate": 1741076458837,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "contracts/beaconProxy/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/calijaaa/using/programming/DeltraForge inc/hardhat/contracts/tests/testImplementation.sol": {
+      "lastModificationDate": 1741079492595,
+      "contentHash": "17ece58d8668f76e0a669783162bcdeb",
+      "sourceName": "contracts/tests/testImplementation.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TestImplementation",
+        "TestImplementationV2"
+      ]
+    }
+  }
+}
