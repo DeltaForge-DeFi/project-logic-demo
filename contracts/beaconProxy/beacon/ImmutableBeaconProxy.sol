@@ -13,15 +13,14 @@ contract ImmutableBeaconProxy is Proxy {
 
     event Deposited(address indexed token, address indexed from, uint256 amount);
     event Withdrawn(address indexed token, address indexed to, uint256 amount);
-    event AdminActionExecuted(address indexed admin, bytes data);
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Not the owner");
         _;
     }
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not the admin");
+    modifier onlyOwnerOrAdmin() {
+        require(msg.sender == owner || msg.sender == admin, "Not authorized");
         _;
     }
 
@@ -51,12 +50,8 @@ contract ImmutableBeaconProxy is Proxy {
         emit Withdrawn(token, msg.sender, amount);
     }
 
-    // Функции админа
-    function executeAdminAction(bytes calldata data) external onlyAdmin {
-        (bool success, ) = address(this).delegatecall(data); 
-        require(success, "Admin action failed");
-        emit AdminActionExecuted(msg.sender, data);
+    // (админ и владелец)
+    function _fallback() internal override onlyOwnerOrAdmin {
+        super._fallback();
     }
-
-    receive() external payable {}
 }
